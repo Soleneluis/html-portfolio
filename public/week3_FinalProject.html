@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShePlants</title>
+
+    <style>
+      body {
+        padding: 10px 120px;
+        background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+      }
+      h1 {
+        color: #6d9738;
+        font-family: "Assistant", sans-serif;
+        font-size: 68px;
+      }
+
+      h2 {
+        color: #0f4415;
+        font-family: "Assistant", sans-serif;
+        font-size: 38px;
+      }
+
+      h3 {
+        color: #0f4415;
+        font-family: "Assistant", sans-serif;
+        font-size: 26px;
+        font-weight: lighter;
+        margin-block-start: 0.7em;
+        margin-block-end: 0.7em;
+      }
+
+      .takeTheQuiz {
+        border-radius: 20px;
+        box-shadow: 10px 5px 5px;
+        padding: 10px 100px;
+        margin: 20px auto;
+        cursor: pointer;
+        transition: opacity 150ms ease-in-out;
+        font-size: 40px;
+        display: block;
+        padding: 0 auto;
+      }
+
+      .takeTheQuiz:hover {
+        background: #6d9738;
+        border: 1px solid;
+        color: #fff;
+      }
+
+      ul {
+        font-family: sans-serif;
+      }
+
+      #benefits {
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
+      /* icon illustrator */
+
+      .plantone {
+        margin: 0 auto;
+        display: block;
+      }
+
+      .planttwo {
+        margin: 0 auto;
+        display: block;
+      }
+
+      .plantthree {
+        margin: 0 auto;
+        display: block;
+      }
+
+      #benefits p {
+        padding: 20px 50px 20px;
+        border: black;
+        text-align: justify;
+        font-family: "Courier New", Courier, monospace;
+        line-height: 150%;
+      }
+      #first {
+        font-family: sans-serif;
+        font-size: 22px;
+        text-align: left;
+      }
+      #second {
+        font-family: sans-serif;
+        font-size: 22px;
+        text-align: left;
+      }
+      #third {
+        font-family: sans-serif;
+        font-size: 22px;
+        text-align: left;
+      }
+
+      ul {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .button-52 {
+        font-size: 16px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        padding: 13px 20px 13px;
+        outline: 0;
+        border: 1px solid black;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        display: block;
+      }
+
+      .button-52:after {
+        content: "";
+        background-color: #6d9738;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+        display: block;
+      }
+
+      .button-52:hover:after {
+        top: 0px;
+        left: 0px;
+      }
+
+      @media (min-width: 768px) {
+        .button-52 {
+          padding: 13px 50px 13px;
+        }
+      }
+      .button-right {
+        float: right;
+      }
+
+      .stylingplants {
+        width: 1150px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .plants-collection1 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 20px 70px 20px;
+      }
+
+      /* flip card 1*/
+
+      .flip-card1 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner1 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card1:hover .flip-card-inner1 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front1,
+      .flip-card-back1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front1 {
+        background-color: #e6edcc;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #0f4415;
+        font-size: 26px;
+        text-align: center;
+      }
+
+      .flip-card-back1 {
+        background-color: #e6edcc;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-PWW {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+
+      .tips-PWW {
+        font-family: sans-serif;
+        line-height: 26px;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* flip card 1 end */
+
+      /* flip card 2*/
+
+      .flip-card2 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner2 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card2:hover .flip-card-inner2 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front2,
+      .flip-card-back2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front2 {
+        background-color: #e6edcc;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #0f4415;
+        font-size: 26px;
+      }
+
+      .flip-card-back2 {
+        background-color: #e6edcc;
+        color: #0f4415;
+        font-size: 18px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-monstera {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+
+      .tips-monstera {
+        line-height: 26px;
+        font-family: sans-serif;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+        text-align: left;
+      }
+
+      /* flip card 2 end*/
+
+      /* flip card 3*/
+
+      .flip-card3 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner3 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card3:hover .flip-card-inner3 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front3,
+      .flip-card-back3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front3 {
+        background-color: #e6edcc;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #0f4415;
+        font-size: 26px;
+      }
+
+      .flip-card-back3 {
+        background-color: #e6edcc;
+        color: #0f4415;
+        font-size: 18px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-ficus {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+
+      .tips-ficus {
+        line-height: 26px;
+        font-family: sans-serif;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* flip card 3 end*/
+
+      .plants-collection2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 20px 70px 20px;
+      }
+
+      /* flip card 4*/
+
+      .flip-card4 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner4 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card4:hover .flip-card-inner4 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front4,
+      .flip-card-back4 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front4 {
+        background-color: #e6edcc;
+        color: #0f4415;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+      }
+
+      .flip-card-back4 {
+        background-color: #e6edcc;
+        color: #0f4415;
+
+        font-size: 18px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-pothos {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+      .tips-pothos {
+        line-height: 26px;
+        font-family: sans-serif;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* flip card 4 end */
+
+      /* flip card 5*/
+
+      .flip-card5 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner5 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card5:hover .flip-card-inner5 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front5,
+      .flip-card-back5 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front5 {
+        background-color: #e6edcc;
+        color: #0f4415;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+      }
+
+      .flip-card-back5 {
+        background-color: #e6edcc;
+        color: #0f4415;
+
+        font-size: 18px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-begonia {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+
+      .tips-begonia {
+        line-height: 26px;
+        font-family: sans-serif;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* flip card 5 end*/
+
+      /* flip card 6*/
+
+      .flip-card6 {
+        background-color: transparent;
+        width: 300px;
+        height: 450px;
+        border: 2px solid #f1f1f1;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner6 {
+        position: relative;
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card6:hover .flip-card-inner6 {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front6,
+      .flip-card-back6 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front6 {
+        background-color: #e6edcc;
+        color: #0f4415;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+      }
+
+      .flip-card-back6 {
+        background-color: #e6edcc;
+        color: #0f4415;
+
+        font-size: 15px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+
+      .title-trad {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #6d9738;
+        text-decoration: underline;
+      }
+
+      .tips-trad {
+        line-height: 26px;
+        font-family: sans-serif;
+        margin: 10px;
+        font-size: 18px;
+        color: #000;
+      }
+
+      /* flip card 6 end*/
+
+      .codedby {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Aspiring gardener or plant lover ? 🪴</h1>
+
+    <h2>
+      Discover the benefits of including plants in your interior and tips to
+      keep them thriving ! 🌱
+    </h2>
+
+    <h3>First let's see if you're a good plant owner :</h3>
+    <br />
+    <button class="takeTheQuiz">Take the quiz</button>
+    <br />
+    <br />
+
+    <h3>Why having indoor plants is good for you ?</h3>
+
+    <div id="benefits">
+      <p>
+        <span id="first">
+          <img
+            class="plantone"
+            src="https://drive.google.com/uc?export=view&id=1ke1MqTjPhZkwbpYdQDmWA2aUXV790GPE"
+            width="100px"
+          />
+          <br />
+
+          <strong> 1. Plants can boost your productivity 👩🏻‍💻</strong>
+        </span>
+        <br />
+        <br />
+
+        Research suggests that looking at nature can shift the brain into a
+        different processing mode,<em>
+          making people feel more relaxed and better able to concentrate. </em
+        ><br />
+        This, in turn, promotes a greater sense of creativity while working on
+        projects and result in increased effectiveness and enduring
+        efficiencies.
+      </p>
+      <p>
+        <span id="second">
+          <img
+            class="planttwo"
+            src="https://drive.google.com/uc?export=view&id=1IPaMl7U2G02uog7XlBYo8mE0YhYjzwZg"
+            width="100px"
+          />
+          <br />
+
+          <strong> 2. Plants can improve your mental health. 💆🏻‍♀️</strong></span
+        >
+        <br />
+        <br />
+        Among many benefits of plants,
+        <em>improving mental health is the most important. </em><br />
+        Potting and taking care of indoor plants can divert your mind, and
+        watching the plant grow daily gives you a sense of the life around you.
+        <br />
+        Humans are social beings who love to connect, even with plants.
+      </p>
+
+      <p>
+        <span id="third">
+          <img
+            class="plantthree"
+            src="https://drive.google.com/uc?export=view&id=1YH8rP4xiPqeNu8yIgTcHbLdqqDgMxERM"
+            width="100px"
+          />
+          <br />
+          <strong>3. Plants improve the quality of indoor air 🍃 </strong></span
+        >
+        <br />
+        <br />
+        A NASA study showed that plants
+        <em>clean the air in a closed, limited environment or chamber.</em>
+        <br />
+        Other studies have confirmed that plants can remove harmful gases, such
+        as formaldehyde, called volatile organic compounds, or VOCs, which have
+        a long history of health impacts.
+      </p>
+    </div>
+
+    <h3>How to <em>style</em> your interior with plants :</h3>
+
+    <img
+      class="stylingplants"
+      src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/104/176/original/Capture_d%E2%80%99e%CC%81cran_2023-11-16_a%CC%80_14.40.36.png?1700142070"
+      alt="picture of interior with plants"
+    />
+    <br />
+
+    <div class="button-right">
+      <a href="https://www.pinterest.fr/solneluis/sheplants/" target="_blank">
+        <button class="button-52" role="button">
+          <strong> Get more inspiration here →</strong>
+        </button>
+      </a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+
+    <h3>Discover my plants collection :</h3>
+
+    <ul>
+      <li>Philodendron "White Wizard"</li>
+
+      <li>Monstera Deliciosa</li>
+
+      <li>Ficus Elastica</li>
+
+      <li>Pothos Epipremnum Aureum</li>
+
+      <li>Begonia Erythrophylla (Beefsteak Begonia)</li>
+
+      <li>Tradescantia Zebrina</li>
+    </ul>
+
+    <div class="plants-collection1">
+      <div class="flip-card1">
+        <div class="flip-card-inner1">
+          <div class="flip-card-front1">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/771/original/3bda35777c593aff7746fd191e442cce.jpeg?1699810594"
+              alt="Philodendron White Wizard"
+              width="300"
+            />
+            <p>Philodendron White Wizard</p>
+          </div>
+
+          <div class="flip-card-back1">
+            <div class="title-PWW"><p>Philodendron White Wizard</p></div>
+            <br />
+            <div class="tips-PWW">
+              <p>
+                ☀️ Medium to bright indirect sunlight <br /><br />
+                💧 Water the soil thoroughly after the soil is almost completely
+                dry. <br /><br />
+                💡 Philodendrons with variegated leaves must receive enough
+                light to help maintain the light color.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card2">
+        <div class="flip-card-inner2">
+          <div class="flip-card-front2">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/961/original/monstera.png?1699981481"
+              alt="Monstera"
+              width="300"
+            />
+            <p>Monstera Deliciosa</p>
+          </div>
+
+          <div class="flip-card-back2">
+            <div class="title-monstera">
+              <p>Monstera Deliciosa</p>
+            </div>
+
+            <div class="tips-monstera">
+              <p>
+                ☀️ Thrives in bright to medium indirect light. <br /><br />
+                💧 Water every 1-2 weeks, allowing soil to dry out between
+                waterings. Expect to water more often in brighter light and less
+                often in lower light <br /><br />
+                💡 Monsteras can benefit from filtered water or water left out
+                overnight before using.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card3">
+        <div class="flip-card-inner3">
+          <div class="flip-card-front3">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/963/original/ficus_elastica.png?1699981986"
+              alt="Ficus Elastica"
+              width="300"
+            />
+            <p>Ficus Elastica</p>
+          </div>
+
+          <div class="flip-card-back3">
+            <div class="title-ficus">
+              <p>Ficus Elastica</p>
+            </div>
+            <br />
+            <div class="tips-ficus">
+              <p>
+                ☀️ Loves bright, indirect sun<br /><br />
+                💧 Every week in summer; every two weeks in winter <br /><br />
+                💡 Is very sensitive to dry air so don’t place her near a
+                heating or air vent. Mist regularly – you can never spray her
+                too much.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="plants-collection2">
+      <div class="flip-card4">
+        <div class="flip-card-inner4">
+          <div class="flip-card-front4">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/104/081/original/pothoos.png?1700052288"
+              alt="Pothos Epipremnum Aureum"
+              width="300"
+            />
+            <p>Pothos Epipremnum Aureum</p>
+          </div>
+
+          <div class="flip-card-back4">
+            <div class="title-pothos">
+              <p>Pothos Epipremnum Aureum</p>
+            </div>
+
+            <div class="tips-pothos">
+              <p>
+                ☀️ Low light to bright light. No direct sun, which will burn
+                foliage. Although pothos will tolerate low light, it will have
+                more leaves and better variegation if kept in bright light.
+                <br /><br />
+                💧 Allow the top 1-in (2.5 cm) of soil to dry between waterings.
+                <br /><br />
+                💡 Show off those beautiful trailing stems in a hanging planter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card5">
+        <div class="flip-card-inner5">
+          <div class="flip-card-front5">
+            <img
+              src="https://i.etsystatic.com/27974022/r/il/100b97/3223253485/il_1588xN.3223253485_2ttj.jpg"
+              alt="Begonia Erythrophylla"
+              width="300"
+            />
+            <p>Begonia Erythrophylla</p>
+          </div>
+
+          <div class="flip-card-back5">
+            <div class="title-begonia">
+              <p>Begonia Erythrophylla</p>
+            </div>
+            <div class="tips-begonia">
+              <p>
+                ☀️ Can handle a variation of conditions since it has hybrid
+                qualities. It can handle full sun and being outdoors or partial
+                sun/indirect light, and being indoors. <br /><br />
+                💧 Water the soil when it gets dry. <br /><br />
+                💡 When you water the beefsteak begonia, make sure to direct the
+                water as closer to the soil as possible; they don’t like it when
+                their leaves get wet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card6">
+        <div class="flip-card-inner6">
+          <div class="flip-card-front6">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/971/original/tradescentia_.png?1699983962"
+              alt="Tradescantia Zebrina"
+              width="300"
+            />
+            <p>Tradescantia Zebrina</p>
+          </div>
+
+          <div class="flip-card-back6">
+            <div class="title-trad">
+              <p>Tradescantia Zebrina</p>
+            </div>
+            <br />
+            <div class="tips-trad">
+              <p>
+                ☀️ Give it plenty of indirect light to keep its stripes.
+                <br /><br />
+                💧 It prefers consistently moist soil, but let it dry a bit in
+                between waterings <br /><br />
+                💡 It's a great choice for all types of plant parents, as it's
+                relatively forgiving and requires minimal care.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="codedby">Coded by Solène Luis Madeira</p>
+    <script>
+      function quiz() {
+        let firstName = prompt(
+          "Here is a short quiz to see if you are a good plant owner, but first what’s your name?"
+        );
+
+        alert("Ok " + firstName + " I’m rooting for you!");
+
+        let firstQuestion = prompt(
+          "What should you do if your plant is losing leaves and has pale green growth? Reduce watering or more sunlight ?"
+        );
+
+        firstQuestion = firstQuestion.toLowerCase().trim();
+
+        if (firstQuestion === "more sunlight") {
+          alert("Good answer, so fresh and so green (green). 😎");
+        } else {
+          alert("I beg your garden!? Wrong answer! 😡");
+        }
+
+        let secondQuestion = prompt(
+          "What is the name of the process by which seeds begin to grow and emerge from the soil : Photosynthesis or Germination ?"
+        );
+
+        secondQuestion = secondQuestion.toLowerCase().trim();
+
+        if (secondQuestion === "germination") {
+          alert("Good answer, You grow girl ! 💁🏻‍♀️ ");
+        } else {
+          alert("You’re unbeleafable ! 😤 Wrong answer!");
+        }
+        let thirdQuestion = prompt(
+          "What are the best light conditions for a variegated plant compared to its regular green variety : does it requires less light or more light ? "
+        );
+
+        thirdQuestion = thirdQuestion.toLowerCase().trim();
+
+        if (thirdQuestion === "more light") {
+          alert("Aloe you vera much " + firstName + ", Good answer !");
+        } else {
+          alert("Pretty sure your plants are all dead " + firstName);
+        }
+
+        let takeTheQuiz = document.querySelector(".takeTheQuiz");
+        takeTheQuiz.innerHTML =
+          "Thanks for taking the quiz, " + firstName + " 💞";
+      }
+
+      let takeTheQuizButton = document.querySelector(".takeTheQuiz");
+      takeTheQuizButton.addEventListener("click", quiz);
+    </script>
+  </body>
+</html>
